@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#7d1f45">
+  <meta name="description" content="A little love surprise made especially for Rizwana.">
+  <title>For Rizwana ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <main class="app-shell">
+    <section class="screen active" id="password-screen" aria-labelledby="password-title">
+      <div class="glass-card password-card">
+        <span class="tiny-heart">♡</span>
+        <p class="eyebrow">A little secret, just for you</p>
+        <h1 id="password-title">Enter the <em>secret code</em></h1>
+        <p class="subtext">Only my beautiful wife knows the way in. 🤍</p>
+        <form id="password-form" novalidate>
+          <label class="sr-only" for="secret-code">Secret code</label>
+          <div class="input-wrap">
+            <input id="secret-code" type="text" autocomplete="off" autocapitalize="words" enterkeyhint="go" inputmode="text" placeholder="Type the secret name..." required>
+            <span aria-hidden="true">♡</span>
+          </div>
+          <button class="primary-btn" type="submit">Unlock my heart <span>→</span></button>
+          <p class="form-message" id="password-message" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="screen" id="welcome-screen" aria-labelledby="welcome-title">
+      <div class="welcome-card">
+        <div class="welcome-photo"><img src="assets/photos/photo-2.jpg" alt="A beautiful photo of Rizwana"></div>
+        <p class="eyebrow">For the one who owns my heart</p>
+        <h1 id="welcome-title">Hello my beautiful <em>wife</em></h1>
+        <p class="nickname">(Rizwana)</p>
+        <p class="welcome-copy">Love to see you smile always, babe <span>❤️</span></p>
+        <div class="choice-area" id="choice-area">
+          <button class="primary-btn yes-btn" id="yes-btn" type="button">YES PLEASE <span>💕</span></button>
+          <button class="secondary-btn no-btn" id="no-btn" type="button">NO THANKS</button>
+        </div>
+        <p class="choice-hint">I made this little world only for you.</p>
+      </div>
+    </section>
+
+    <section class="screen" id="reveal-screen" aria-labelledby="reveal-title">
+      <div class="reveal-layout">
+        <div class="photo-stage">
+          <img class="main-photo" src="assets/photos/photo-2.jpg" alt="Rizwana smiling in a mirror photo">
+          <div class="photo-frame"></div>
+          <span class="photo-note">my favorite view ♡</span>
+        </div>
+        <div class="gallery-preview" id="gallery-preview" role="button" tabindex="0" aria-label="Open the gallery of her beautiful moments">
+          <div class="gallery-preview-header">
+            <span class="gallery-preview-icon" aria-hidden="true">📷</span>
+            <span class="gallery-preview-title">Gallery</span>
+            <span class="gallery-preview-divider" aria-hidden="true">|</span>
+            <span class="gallery-preview-subtitle">Your beautiful moments ♡</span>
+          </div>
+          <div class="gallery-preview-strip" id="gallery-preview-strip"></div>
+          <p class="gallery-preview-footer">Tap to see my world <span>♡</span><span class="gallery-preview-arrow" aria-hidden="true">›</span></p>
+        </div>
+        <div class="reveal-copy">
+          <p class="eyebrow">A little place made with love</p>
+          <h2 id="reveal-title">Every picture of you feels like a <em>memory I want to keep forever.</em></h2>
+          <p>And every day with you gives me another reason to smile. I hope this small surprise reminds you how deeply you are loved, Rukayya.</p>
+          <button class="primary-btn" id="open-letters-btn" type="button">Open your letters <span>💌</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="letters-screen" aria-labelledby="letters-title">
+      <div class="letters-header">
+        <p class="eyebrow">Six little pieces of my heart</p>
+        <h2 id="letters-title">Choose an envelope, <em>my love</em></h2>
+        <p>Open them in any order. Every one has something I want you to remember.</p>
+      </div>
+      <div class="envelope-grid" id="envelope-grid">
+        <button class="envelope" data-note="0" type="button"><span class="envelope-top">💌</span><span>Open when you want to smile</span><small>From Muhammad</small></button>
+        <button class="envelope" data-note="1" type="button"><span class="envelope-top">💌</span><span>Open when you miss me</span><small>For my babe</small></button>
+        <button class="envelope" data-note="2" type="button"><span class="envelope-top">💌</span><span>Open when you need to feel loved</span><small>For Rizwana</small></button>
+        <button class="envelope" data-note="3" type="button"><span class="envelope-top">💌</span><span>What I love about you</span><small>For my wifey</small></button>
+        <button class="envelope" data-note="4" type="button"><span class="envelope-top">💌</span><span>A message for my beautiful wifey</span><small>Only for you</small></button>
+        <button class="envelope final-envelope" data-note="5" type="button"><span class="envelope-top">❤️</span><span>Open this one last</span><small>The final little surprise</small></button>
+      </div>
+      <button class="text-btn" id="back-to-reveal" type="button">← See my world again</button>
+    </section>
+
+    <section class="screen" id="final-screen" aria-labelledby="final-title">
+      <div class="final-background">
+        <img src="assets/photos/photo-1.jpg" alt="" aria-hidden="true">
+      </div>
+      <div class="final-card">
+        <div class="mini-gallery" aria-hidden="true">
+          <img src="assets/photos/photo-3.jpg" alt="">
+          <img src="assets/photos/photo-4.jpg" alt="">
+        </div>
+        <p class="eyebrow">One last thing, my love</p>
+        <h2 id="final-title">I Love You <em>cutie pie</em> <span>🦆🍼</span></h2>
+        <p>Thank you for being my happiness, my peace, my favorite person, and the beautiful woman I want beside me through every chapter.</p>
+        <p class="signature">— Muhammad <span>♡</span></p>
+        <button class="primary-btn" id="replay-btn" type="button">Read the letters again <span>💌</span></button>
+      </div>
+    </section>
+  </main>
+
+  <button class="music-btn" id="music-btn" type="button" aria-pressed="false" title="Press play for our playlist">
+    <span class="music-icon">♫</span><span class="music-label">Our song</span>
+  </button>
+  <audio id="love-song" preload="none"></audio>
+
+  <div class="note-modal" id="note-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="note-title">
+    <div class="modal-backdrop" data-close-modal></div>
+    <article class="letter-card">
+      <button class="close-btn" type="button" data-close-modal aria-label="Close letter">×</button>
+      <span class="letter-stamp">♡</span>
+      <p class="letter-number" id="letter-number">LETTER 01</p>
+      <h3 id="note-title"></h3>
+      <div class="letter-body" id="note-body"></div>
+      <p class="letter-sign">Always yours,<br><strong>Muhammad</strong></p>
+      <button class="next-letter-btn" id="next-letter-btn" type="button">Next letter →</button>
+    </article>
+  </div>
+
+  <div class="gallery-overlay" id="gallery-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Her photo gallery">
+    <div class="gallery-overlay-backdrop" data-gallery-back></div>
+    <div class="gallery-overlay-inner">
+      <header class="gallery-overlay-header">
+        <button class="gallery-back-btn" id="gallery-back-btn" type="button" aria-label="Back">
+          <span aria-hidden="true">←</span> Back
+        </button>
+        <p class="gallery-overlay-title">Your Beautiful Moments <span>♡</span></p>
+        <span class="gallery-overlay-count" id="gallery-overlay-count"></span>
+      </header>
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <div class="gallery-lightbox" id="gallery-lightbox">
+        <button class="lightbox-nav prev" id="lightbox-prev" type="button" aria-label="Previous photo">‹</button>
+        <img id="lightbox-image" src="" alt="">
+        <button class="lightbox-nav next" id="lightbox-next" type="button" aria-label="Next photo">›</button>
+        <p class="lightbox-counter" id="lightbox-counter"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
