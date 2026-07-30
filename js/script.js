@@ -162,21 +162,30 @@
   document.querySelector("#replay-btn").addEventListener("click",()=>showScreen("letters-screen"));
 
   const modal=document.querySelector("#note-modal"), title=document.querySelector("#note-title"), body=document.querySelector("#note-body");
-  function openNote(index){
-    currentNote=index; const note=notes[index];
-    title.textContent=note.title;
-    document.querySelector("#letter-number").textContent=`LETTER ${String(index+1).padStart(2,"0")}`;
-    body.innerHTML=note.body.map(p=>`<p>${p}</p>`).join("");
-    document.querySelector("#next-letter-btn").textContent=index===notes.length-1?"See the final surprise ❤️":"Next letter →";
-    modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
+  function openNote(index) {
+  // ... your existing text population code ...
+  
+  modal.classList.add("open");
+  modal.removeAttribute("inert");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  
+  // Focus the button AFTER the modal is visible
+  const nextBtn = document.querySelector("#next-letter-btn");
+  if (nextBtn) nextBtn.focus();
+}
+
+function closeNote() {
+  // Move focus back to the page background before hiding
+  if (document.activeElement && modal.contains(document.activeElement)) {
+    document.activeElement.blur();
   }
-  function closeNote(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow=""}
-  document.querySelectorAll(".envelope").forEach(btn=>btn.addEventListener("click",()=>openNote(Number(btn.dataset.note))));
-  document.querySelectorAll("[data-close-modal]").forEach(el=>el.addEventListener("click",closeNote));
-  document.querySelector("#next-letter-btn").addEventListener("click",()=>{
-    if(currentNote===notes.length-1){closeNote();showScreen("final-screen");burstHearts(30)}
-    else openNote(currentNote+1);
-  });
+  
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  modal.setAttribute("inert", "");
+  document.body.style.overflow = "";
+}
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("open"))closeNote()});
 
   // ---- Gallery preview ----
