@@ -185,7 +185,7 @@ function closeNote() {
   modal.setAttribute("aria-hidden", "true");
   modal.setAttribute("inert", "");
   document.body.style.overflow = "";
-}
+});
   document.addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("open"))closeNote()});
 
   // ---- Gallery preview ----
